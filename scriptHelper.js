@@ -54,6 +54,8 @@ function validateInput(testInput) {
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    //let pilotName=document.getElementById("pilotName");
    //window.alert("Valid pilot name, copilot name, feul mass and cargo mass inputs must be entered prior to clicking Submit button");
+   let faultyItems=document.getElementById("faultyItems");
+   faultyItems.style.visibility="visible";
    let flag=true;
    console.log(flag);
    let pilotName=document.querySelector("input[name=pilotName]");
@@ -122,7 +124,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
         console.log(level);
         if(level<10000){
-            let faultyItems=document.getElementById("faultyItems");
+            //faultyItems=document.getElementById("faultyItems");
             faultyItems.style.visibility="visible";
             fuelStatus.innerText="Fuel level too low for launch";
             launchStatus.innerText="Shuttle not ready for launch";
@@ -132,7 +134,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         }
         console.log(mass);
         if(mass>10000){
-            let faultyItems=document.getElementById("faultyItems");
+            //faultyItems=document.getElementById("faultyItems");
             faultyItems.style.visibility="visible";
             cargoStatus.innerText="Cargo mass too high for launch";
             launchStatus.innerText="Shuttle not ready for launch";
