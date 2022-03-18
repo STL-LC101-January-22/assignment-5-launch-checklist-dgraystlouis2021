@@ -1,6 +1,8 @@
 // Write your helper functions here!
 require('isomorphic-fetch');
 
+// TEST AUTOGRADER
+
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
    /*
