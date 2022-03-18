@@ -69,7 +69,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     }
    let copilotName=document.querySelector("input[name=copilotName]");
    str=validateInput(copilotName.value);
-   console.log(str);
+   //console.log(str);
    if(str==="Empty"){
         window.alert("All fields are rquired!");
         flag=false;
