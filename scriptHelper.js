@@ -27,7 +27,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     window.alert(missionTarget);
                 }
                 */
-                missionTarget.innerHTML+=`<h2>Mission Destination</h2>
+                missionTarget.innerHTML=`<h2>Mission Destination</h2>
                                              <ol>
                                              <li>Name: ${name}</li>
                                              <li>Diameter: ${diameter}</li>
@@ -58,7 +58,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    console.log(flag);
    let pilotName=document.querySelector("input[name=pilotName]");
    let str=validateInput(pilotName.value);
-   console.log(str);
+   //console.log(str);
    if(str==="Empty"){
        window.alert("All fields are rquired!");
        flag=false;
