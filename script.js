@@ -16,9 +16,9 @@ window.addEventListener("load", function() {
 
    let formSubmit=document.getElementById("formSubmit");
    formSubmit.addEventListener("click", function(event){
-       
+        let faultyItems=document.getElementById("faultyItems");
         console.log("calling formSubmission");
-        let submissionCheck=formSubmission(document,"faultyItems","Dave","Hope","10","20");
+        let submissionCheck=formSubmission(document,faultyItems,"Dave","Hope","10","20");
         console.log(submissionCheck);
         //window.alert("submissionCheck "+submissionCheck);
 
