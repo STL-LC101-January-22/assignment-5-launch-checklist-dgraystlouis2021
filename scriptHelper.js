@@ -1,3 +1,5 @@
+const { nodeDetachedFromDocument } = require('jsdom/lib/jsdom/living/named-properties-window');
+
 // Write your helper functions here!
 require('isomorphic-fetch');
 
@@ -55,7 +57,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    //let pilotName=document.getElementById("pilotName");
    //window.alert("Valid pilot name, copilot name, feul mass and cargo mass inputs must be entered prior to clicking Submit button");
    //let faultyItems=document.getElementById("faultyItems");
-   list.style.visibility="hidden";
+   if(window!=="undefined"){
+        console.log("typeof window: ",typeof window);
+   }else{
+        console.log("window is not defined");
+   }
+   list.style.visibility='hidden';
    let flag=true;
    console.log(flag);
    let pilotName=document.querySelector("input[name=pilotName]");

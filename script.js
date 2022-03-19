@@ -13,11 +13,12 @@ window.addEventListener("load", function() {
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
    })
    */
-
+   let list=document.getElementById("faultyItems");
+   list.style.visibility='hidden';
    let formSubmit=document.getElementById("formSubmit");
    formSubmit.addEventListener("click", function(event){
-        let list=document.getElementById("faultyItems");
-        list.style.visibility="hidden";
+        list=document.getElementById("faultyItems");
+        list.style.visibility='hidden';
         console.log("calling formSubmission");
         let submissionCheck=formSubmission(document,list,"Dave","Hope","10","20");
         console.log(submissionCheck);
