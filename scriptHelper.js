@@ -62,8 +62,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    let str=validateInput(pilotName.value);
    //console.log(str);
    if(str==="Empty"){
-       //window.alert("All fields are rquired!");
-       self.alert("All fields are rquired!");
+       alert("All fields are rquired!");
+       //self.alert("All fields are rquired!");
        flag=false;
    }
    if(str==="Is a Number"){
