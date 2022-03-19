@@ -57,35 +57,42 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    //let pilotName=document.getElementById("pilotName");
    //window.alert("Valid pilot name, copilot name, feul mass and cargo mass inputs must be entered prior to clicking Submit button");
    //let faultyItems=document.getElementById("faultyItems");
+   /*
    if(window!=="undefined"){
         console.log("typeof window: ",typeof window);
    }else{
         console.log("window is not defined");
    }
+   */
    list.style.visibility='hidden';
+   let errorMsg="";
    let flag=true;
    console.log(flag);
    let pilotName=document.querySelector("input[name=pilotName]");
    let str=validateInput(pilotName.value);
    //console.log(str);
    if(str==="Empty"){
-       alert("All fields are rquired!");
+       //alert("All fields are rquired!");
        //self.alert("All fields are rquired!");
+       errorMsg="All fields are rquired!";
        flag=false;
    }
    if(str==="Is a Number"){
-    window.alert("Make sure to enter valid information for each field!");
+    //window.alert("Make sure to enter valid information for each field!");
+    errorMsg="Make sure to enter valid information for each field!";
     flag=false;
     }
    let copilotName=document.querySelector("input[name=copilotName]");
    str=validateInput(copilotName.value);
    //console.log(str);
    if(str==="Empty"){
-        window.alert("All fields are rquired!");
+        //window.alert("All fields are rquired!");
+        errorMsg="All fields are rquired!";
         flag=false;
     }
     if(str==="Is a Number"){
-        window.alert("Make sure to enter valid information for each field!");
+        //window.alert("Make sure to enter valid information for each field!");
+        errorMsg="Make sure to enter valid information for each field!";
         flag=false;
     }
    fuelLevel=document.querySelector("input[name=fuelLevel]");
@@ -93,11 +100,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    str=validateInput(level);
    console.log(str);
    if(str==="Empty"){
-       window.alert("All fields are rquired");
+       //window.alert("All fields are rquired");
+       errorMsg="All fields are rquired!";
        flag=false;
    }
    if(str==="Not a Number"){
-        window.alert("Make sure to enter valid information for each field!");
+        //window.alert("Make sure to enter valid information for each field!");
+        errorMsg="Make sure to enter valid information for each field!";
         flag=false;
     }
    let cargoMass=document.querySelector("input[name=cargoMass]");
@@ -106,11 +115,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    str=validateInput(mass);
    console.log(str);
    if(str==="Empty"){
-        window.alert("All fields are rquired");
+        //window.alert("All fields are rquired");
+        errorMsg="All fields are rquired!";
         flag=false;
     }
     if(str==="Not a Number"){
-        window.alert("Make sure to enter valid information for each field!");
+        //window.alert("Make sure to enter valid information for each field!");
+        errorMsg="Make sure to enter valid information for each field!";
         flag=false;
     }
     //window.alert("done");
@@ -119,12 +130,16 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         //window.alert("inside flag");
        // INSERT REMAINING CODE HERE
         let pilotStatus=document.getElementById("pilotStatus");
-        pilotStatus.innerText=`Pilot ${pilotName.value} is ready for launch`;
+        //pilotStatus.innerText=`Pilot ${pilotName.value} is ready for launch`;
+        pilotStatus.textContent=`Pilot ${pilotName.value} is ready for launch`;
         let copilotStatus=document.getElementById("copilotStatus");
-        copilotStatus.innerText=`Co-pilot ${copilotName.value} is ready for launch`;
+        //copilotStatus.innerText=`Co-pilot ${copilotName.value} is ready for launch`;
+        copilotStatus.textContent=`Co-pilot ${copilotName.value} is ready for launch`;
+
 
         let launchStatus=document.getElementById("launchStatus");
-        launchStatus.innerText="Shuttle is ready for launch";
+        //launchStatus.innerText="Shuttle is ready for launch";
+        launchStatus.textContent="Shuttle is ready for launch";
         launchStatus.style.color="green";
 
         let fuelStatus=document.getElementById("fuelStatus");
@@ -134,22 +149,30 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         if(level<10000){
             let faultyItems=document.getElementById("faultyItems");
             faultyItems.style.visibility="visible";
-            fuelStatus.innerText="Fuel level too low for launch";
-            launchStatus.innerText="Shuttle not ready for launch";
+            //fuelStatus.innerText="Fuel level too low for launch";
+            //launchStatus.innerText="Shuttle not ready for launch";
+            fuelStatus.textContent="Fuel level too low for launch";
+            launchStatus.textContent="Shuttle not ready for launch";
             launchStatus.style.color="red";
         }else{
-            fuelStatus.innerText="Fuel level high enough for launch";
+            //fuelStatus.innerText="Fuel level high enough for launch";
+            fuelStatus.textContent="Fuel level high enough for launch";
         }
         console.log(mass);
         if(mass>10000){
             let faultyItems=document.getElementById("faultyItems");
             faultyItems.style.visibility="visible";
-            cargoStatus.innerText="Cargo mass too high for launch";
-            launchStatus.innerText="Shuttle not ready for launch";
+            //cargoStatus.innerText="Cargo mass too high for launch";
+            //launchStatus.innerText="Shuttle not ready for launch";
+            cargoStatus.textContent="Cargo mass too high for launch";
+            launchStatus.textContent="Shuttle not ready for launch";
             launchStatus.style.color="red";
         }else{
-            cargoStatus.innerText="Cargo mass low enough for launch";
+            //cargoStatus.innerText="Cargo mass low enough for launch";
+            cargoStatus.textContent="Cargo mass low enough for launch";
         }
+    }else{
+        alert(errorMsg);
     }
    
     //window.alert("submission finished");
